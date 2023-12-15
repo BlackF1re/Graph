@@ -21,7 +21,7 @@ int main()
 
     printf("Введите количество ребер графа: ");
     isDigit = scanf_s("%d", &edgesCount);
-    if (isDigit != 1 || edgesCount < 0 || edgesCount > vertexCount)
+    if (isDigit != 1 || edgesCount < 0 || edgesCount > vertexCount * (vertexCount-1) / 2)
     {
         error();
     }
@@ -43,9 +43,10 @@ int main()
     for (int i = 0; i < edgesCount; i++)
     {
         printf("Введите начало и конец ребра %d\n", i);
-        scanf("%d", &source);
-        if (source > edgesCount-1)
+        scanf("%d", &source-1);
+        if (source > edgesCount)
             error();
+
         scanf("%d", &destiny);
         if (destiny > edgesCount-1)
             error();
