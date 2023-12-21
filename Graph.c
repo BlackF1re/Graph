@@ -43,12 +43,12 @@ int main()
     for (int i = 0; i < edgesCount; i++)
     {
         printf("Введите начало и конец ребра %d\n", i);
-        scanf("%d", &source-1);
-        if (source > edgesCount)
+        isDigit = scanf("%d", &source);
+        if (source > edgesCount || isDigit != 1)
             error();
 
-        scanf("%d", &destiny);
-        if (destiny > edgesCount-1)
+        isDigit = scanf("%d", &destiny);
+        if (destiny > edgesCount-1 || isDigit != 1)
             error();
         adjacencyMatrix[source][destiny] = 1;
         adjacencyMatrix[destiny][source] = 1;
