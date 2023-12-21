@@ -14,7 +14,7 @@ int main()
 
     printf("Введите количество вершин графа: ");
     isDigit = scanf_s("%d", &vertexCount);
-    if (isDigit != 1 || vertexCount <= 0 || edgesCount < 0)
+    if (isDigit != 1 || vertexCount <= 0)
     {
         error();
     }
